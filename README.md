@@ -2,7 +2,7 @@
 
 A competitive LeetCode leaderboard with weekly rankings, built with Next.js and Supabase. Features a retro Minecraft-inspired dark theme!
 
-![Status](https://img.shields.io/badge/Phase%202-Complete-brightgreen)
+![Status](https://img.shields.io/badge/Phase%203-Complete-brightgreen)
 ![Next.js](https://img.shields.io/badge/Next.js-15-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
 ![Supabase](https://img.shields.io/badge/Supabase-Powered-green)
@@ -16,7 +16,12 @@ A competitive LeetCode leaderboard with weekly rankings, built with Next.js and 
 - 📊 **Automated Stats Tracking** - Hourly updates from LeetCode API
 - 🔄 **Weekly Stats** - Automatic weekly reset every Monday
 - 🏆 **Points System** - Earn points based on difficulty (Easy: 1pt, Medium: 2pt, Hard: 3pt)
+- 📈 **Beautiful Leaderboard** - Minecraft-styled table with rankings
+- 🥇 **Rank Badges** - Gold/Silver/Bronze for top 3 users
+- ✨ **User Highlighting** - See your position at a glance
+- 🔀 **Multiple Sorting** - Sort by weekly points, total solved, or contest rating
 - ⚡ **Manual Refresh** - Users can trigger their own stats update
+- 📱 **Responsive Design** - Works perfectly on mobile, tablet, and desktop
 - 👑 **Admin Panel** - Manually manage users (admin-only feature) [Coming in Phase 4]
 - 🎨 **Minecraft Theme** - Retro pixel art styling with dark mode
 
@@ -77,12 +82,15 @@ Visit http://localhost:3000
 - [x] Manual refresh button for users
 - [x] Automatic weekly reset (Mondays)
 
-### 📊 Phase 3: Leaderboard UI (NEXT)
-- [ ] Main leaderboard table
-- [ ] Ranking system with sorting
-- [ ] Real-time updates
-- [ ] User highlighting
-- [ ] Difficulty breakdown display
+### ✅ Phase 3: Leaderboard UI (COMPLETE)
+- [x] Main leaderboard table with Minecraft styling
+- [x] Ranking system with gold/silver/bronze badges
+- [x] Difficulty breakdown display (E:X, M:Y, H:Z)
+- [x] Current user row highlighting
+- [x] Multiple sort options (weekly points, total, rating)
+- [x] Refresh functionality
+- [x] Responsive design for all devices
+- [x] Real-time ranking calculation with tie-breaking
 
 ### 👑 Phase 4: Admin Panel (FINAL)
 - [ ] Admin dashboard

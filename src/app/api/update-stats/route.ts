@@ -85,6 +85,8 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    console.log('Fetched LeetCode stats for', leetcodeUsername, ':', leetcodeStats)
+
     // Get or create user stats record
     const { data: existingStats } = await supabase
       .from('leetcode_stats')
@@ -97,6 +99,7 @@ export async function POST(request: NextRequest) {
 
     if (!existingStats) {
       // First time - create new record with current stats as baseline
+      console.log('No existing stats found, creating new record for user:', targetUserId)
       weeklyStats = {
         weeklySolved: 0,
         weeklyEasy: 0,
@@ -129,12 +132,15 @@ export async function POST(request: NextRequest) {
       if (insertError) {
         console.error('Error inserting stats:', insertError)
         return NextResponse.json(
-          { error: 'Failed to save stats' },
+          { error: 'Failed to save stats', details: insertError },
           { status: 500 }
         )
       }
+
+      console.log('Successfully created stats record for user:', targetUserId)
     } else {
       // Check if we need to reset for a new week
+      console.log('Existing stats found, updating for user:', targetUserId)
       const needsReset = shouldResetWeek(new Date(existingStats.week_start))
 
       let baselineEasy = existingStats.baseline_easy || existingStats.total_easy
@@ -181,10 +187,12 @@ export async function POST(request: NextRequest) {
       if (updateError) {
         console.error('Error updating stats:', updateError)
         return NextResponse.json(
-          { error: 'Failed to update stats' },
+          { error: 'Failed to update stats', details: updateError },
           { status: 500 }
         )
       }
+
+      console.log('Successfully updated stats for user:', targetUserId)
     }
 
     return NextResponse.json({

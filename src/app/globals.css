@@ -196,3 +196,42 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--bg-hover);
 }
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  body {
+    font-size: 10px;
+  }
+  
+  .mc-table {
+    font-size: 10px;
+  }
+  
+  .mc-table th,
+  .mc-table td {
+    padding: 8px;
+  }
+  
+  .mc-button {
+    font-size: 10px;
+    padding: 8px 16px;
+  }
+  
+  .mc-panel {
+    padding: 16px;
+  }
+}
+
+/* Animation for loading */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
