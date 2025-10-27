@@ -1,26 +1,198 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Minecraft Dark Theme Colors */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-hover: #3d3d3d;
+  --border-dark: #0a0a0a;
+  --border-light: #4a4a4a;
+  
+  /* Accent Colors */
+  --green: #55ff55;
+  --red: #ff5555;
+  --gold: #ffaa00;
+  --blue: #5555ff;
+  --purple: #aa00aa;
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
+  --text-muted: #555555;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  line-height: 1.6;
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Minecraft-style button */
+.mc-button {
+  background: var(--bg-secondary);
+  border: 4px solid;
+  border-color: var(--border-light) var(--border-dark) var(--border-dark) var(--border-light);
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 12px 24px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  transition: all 0.1s;
+  box-shadow: 0 4px 0 var(--border-dark);
+  text-transform: uppercase;
+}
+
+.mc-button:hover {
+  background: var(--bg-hover);
+  transform: translateY(1px);
+  box-shadow: 0 3px 0 var(--border-dark);
+}
+
+.mc-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 0 0 var(--border-dark);
+}
+
+.mc-button-green {
+  background: #2d5016;
+  border-color: #3f7019 #1a3010 #1a3010 #3f7019;
+}
+
+.mc-button-green:hover {
+  background: #3f7019;
+}
+
+/* Minecraft-style input */
+.mc-input {
+  background: var(--bg-primary);
+  border: 4px solid;
+  border-color: var(--border-dark) var(--border-light) var(--border-light) var(--border-dark);
+  color: var(--text-primary);
+  padding: 12px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 12px;
+  outline: none;
+  width: 100%;
+}
+
+.mc-input:focus {
+  border-color: var(--blue) var(--blue) var(--blue) var(--blue);
+}
+
+/* Minecraft-style panel/container */
+.mc-panel {
+  background: var(--bg-secondary);
+  border: 4px solid;
+  border-color: var(--border-light) var(--border-dark) var(--border-dark) var(--border-light);
+  padding: 24px;
+  box-shadow: 0 8px 0 var(--border-dark);
+}
+
+/* Minecraft-style table */
+.mc-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.mc-table th,
+.mc-table td {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-dark);
+  padding: 12px;
+  text-align: left;
+}
+
+.mc-table th {
+  background: var(--bg-hover);
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.mc-table tr:hover td {
+  background: var(--bg-hover);
+}
+
+.mc-table tr.highlight td {
+  background: #2d3d2d;
+  border-color: var(--green);
+}
+
+/* Rank badges */
+.rank-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 2px solid;
+  font-size: 10px;
+}
+
+.rank-1 {
+  background: #ffd700;
+  color: #000;
+  border-color: #ffed4e #b8860b #b8860b #ffed4e;
+}
+
+.rank-2 {
+  background: #c0c0c0;
+  color: #000;
+  border-color: #e8e8e8 #7d7d7d #7d7d7d #e8e8e8;
+}
+
+.rank-3 {
+  background: #cd7f32;
+  color: #000;
+  border-color: #e69a5a #8b5a2b #8b5a2b #e69a5a;
+}
+
+/* Loading animation */
+.mc-loading {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 3px solid var(--text-muted);
+  border-top-color: var(--text-primary);
+  border-radius: 0;
+  animation: spin 1s steps(8) infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Text colors for difficulty */
+.text-easy { color: var(--green); }
+.text-medium { color: var(--gold); }
+.text-hard { color: var(--red); }
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+  border: 2px solid var(--border-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-secondary);
+  border: 2px solid;
+  border-color: var(--border-light) var(--border-dark) var(--border-dark) var(--border-light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-hover);
 }

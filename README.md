@@ -1,36 +1,188 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎮 LeetBoard - Minecraft-Styled LeetCode Leaderboard
 
-## Getting Started
+A competitive LeetCode leaderboard with weekly rankings, built with Next.js and Supabase. Features a retro Minecraft-inspired dark theme!
 
-First, run the development server:
+![Status](https://img.shields.io/badge/Phase%201-Complete-brightgreen)
+![Next.js](https://img.shields.io/badge/Next.js-15-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Supabase](https://img.shields.io/badge/Supabase-Powered-green)
+
+---
+
+## ✨ Features
+
+- 🔐 **Google OAuth Authentication** - Secure sign-in with Google
+- 🎯 **LeetCode Integration** - Validates and tracks real LeetCode usernames
+- 📊 **Weekly Leaderboard** - Compete with friends on weekly problem-solving
+- 🏆 **Points System** - Earn points based on difficulty (Easy: 1pt, Medium: 2pt, Hard: 3pt)
+- 👑 **Admin Panel** - Manually manage users (admin-only feature)
+- 🎨 **Minecraft Theme** - Retro pixel art styling with dark mode
+
+---
+
+## 🚀 Quick Start
+
+**For first-time setup, see:** [`QUICK_START.md`](QUICK_START.md)
+
+### Prerequisites
+- Node.js 18+
+- Supabase account
+- Google OAuth credentials
+
+### Installation
 
 ```bash
+# Install dependencies
+npm install
+
+# Copy environment variables
+cp .env.local.example .env.local
+
+# Edit .env.local with your Supabase credentials
+# Then run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📚 Documentation
 
-## Learn More
+- **[QUICK_START.md](QUICK_START.md)** - 5-minute setup guide
+- **[PHASE1_SETUP.md](PHASE1_SETUP.md)** - Detailed Phase 1 instructions  
+- **[PROJECT_ROADMAP.md](PROJECT_ROADMAP.md)** - Full project plan (all 4 phases)
+- **[DATABASE_SCHEMA.md](DATABASE_SCHEMA.md)** - Database structure and SQL
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🏗️ Project Status
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### ✅ Phase 1: Authentication & Signup (COMPLETE)
+- [x] Google OAuth integration
+- [x] LeetCode username validation
+- [x] Supabase database setup
+- [x] Minecraft-styled UI theme
+- [x] User profile management
 
-## Deploy on Vercel
+### 🔄 Phase 2: LeetCode Data Integration (NEXT)
+- [ ] Fetch user statistics from LeetCode
+- [ ] Weekly stats tracking
+- [ ] Automated data refresh
+- [ ] Points calculation system
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 📊 Phase 3: Leaderboard UI (FUTURE)
+- [ ] Main leaderboard table
+- [ ] Ranking system
+- [ ] Real-time updates
+- [ ] User highlighting
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 👑 Phase 4: Admin Panel (FINAL)
+- [ ] Admin dashboard
+- [ ] Manual user management
+- [ ] Bulk operations
+- [ ] System logs
+
+---
+
+## 🎨 Design System
+
+The project uses a **Minecraft-inspired dark theme** with:
+- Pixel font (Press Start 2P)
+- Blocky UI elements with depth/shadows
+- Retro color palette
+- Pixelated scrollbars and inputs
+
+### Custom CSS Classes:
+- `.mc-button` - Minecraft-styled buttons
+- `.mc-input` - Pixelated input fields
+- `.mc-panel` - Container panels
+- `.mc-table` - Leaderboard table
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** Next.js 15, React 19, TypeScript, Tailwind CSS 4
+- **Backend:** Next.js API Routes, Supabase (PostgreSQL)
+- **Auth:** Supabase Auth with Google OAuth
+- **External:** LeetCode GraphQL API
+- **Deployment:** Vercel (recommended)
+
+---
+
+## 📁 Project Structure
+
+```
+leetboard/
+├── src/
+│   ├── app/
+│   │   ├── api/              # API routes
+│   │   ├── auth/             # Auth callbacks
+│   │   ├── signup/           # Signup page
+│   │   └── ...
+│   ├── lib/
+│   │   └── supabase/         # Supabase utilities
+│   └── middleware.ts         # Auth middleware
+├── public/                   # Static assets
+├── DATABASE_SCHEMA.md        # SQL schema
+├── PHASE1_SETUP.md          # Setup guide
+└── PROJECT_ROADMAP.md       # Full roadmap
+```
+
+---
+
+## 🔒 Environment Variables
+
+Create a `.env.local` file with:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+ADMIN_EMAIL=your-admin-email@example.com
+```
+
+See [`.env.local.example`](.env.local.example) for details.
+
+---
+
+## 🧪 Development
+
+```bash
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Run production build
+npm start
+
+# Lint code
+npm run lint
+```
+
+---
+
+## 🤝 Contributing
+
+This is a personal project, but feel free to fork and customize it for your own use!
+
+---
+
+## 📝 License
+
+MIT License - feel free to use this project however you'd like!
+
+---
+
+## 🎯 Roadmap
+
+See [`PROJECT_ROADMAP.md`](PROJECT_ROADMAP.md) for the complete 4-phase development plan.
+
+**Current Phase:** Phase 1 Complete ✅  
+**Next Up:** Phase 2 - LeetCode Data Integration 🔄
+
+---
+
+**Built with ❤️ and lots of pixel art**
