@@ -46,16 +46,16 @@ export default function LeaderboardRow({ user, isCurrentUser }: LeaderboardRowPr
         </div>
       </td>
 
-      {/* Weekly Solved */}
+      {/* Total Solved */}
       <td>
         <div className="flex flex-col">
-          <span className="font-bold">{stats?.weekly_solved || 0}</span>
+          <span className="font-bold">{stats?.total_solved || 0}</span>
           <span className="text-xs text-[var(--text-secondary)]">
-            <span className="text-easy">E:{stats?.weekly_easy || 0}</span>
+            <span className="text-easy">E:{stats?.total_easy || 0}</span>
             {', '}
-            <span className="text-medium">M:{stats?.weekly_medium || 0}</span>
+            <span className="text-medium">M:{stats?.total_medium || 0}</span>
             {', '}
-            <span className="text-hard">H:{stats?.weekly_hard || 0}</span>
+            <span className="text-hard">H:{stats?.total_hard || 0}</span>
           </span>
         </div>
       </td>
@@ -67,7 +67,7 @@ export default function LeaderboardRow({ user, isCurrentUser }: LeaderboardRowPr
         </span>
       </td>
 
-      {/* Total Solved */}
+      {/* Total Solved (overall) */}
       <td className="text-center">
         <span className="font-bold">{stats?.total_solved || 0}</span>
       </td>

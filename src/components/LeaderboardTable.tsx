@@ -26,7 +26,7 @@ export default function LeaderboardTable({ users, currentUserId }: LeaderboardTa
           <tr>
             <th className="w-20">Rank</th>
             <th className="min-w-[200px]">User Profile</th>
-            <th className="min-w-[140px]">Solved (Weekly)</th>
+            <th className="min-w-[140px]">Solved</th>
             <th className="w-32">Points (Weekly)</th>
             <th className="w-32">Total Solved</th>
             <th className="w-32">Contest Rating</th>

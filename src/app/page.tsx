@@ -3,7 +3,6 @@ import LeaderboardTable from '@/components/LeaderboardTable'
 import RefreshStatsButton from '@/components/RefreshStatsButton'
 import LeaderboardHeader from '@/components/LeaderboardHeader'
 import SortControls from '@/components/SortControls'
-import RefreshLeaderboardButton from '@/components/RefreshLeaderboardButton'
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
@@ -20,7 +19,7 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <div className="min-h-screen p-4 md:p-8">
-      <div className="max-w-7xl mx-auto space-y-6">
+      <div className="w-full space-y-6">
         {/* Header */}
         <LeaderboardHeader />
 
@@ -28,12 +27,9 @@ export default async function Home({ searchParams }: HomeProps) {
         <div className="flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
           <SortControls />
           
-          <div className="flex gap-2">
-            <RefreshLeaderboardButton />
-            {currentUserId && (
-              <RefreshStatsButton />
-            )}
-          </div>
+          {currentUserId && (
+            <RefreshStatsButton />
+          )}
         </div>
 
         {/* Leaderboard */}

@@ -38,7 +38,7 @@ export default function RefreshStatsButton() {
       <button
         onClick={handleRefresh}
         disabled={isRefreshing}
-        className="mc-button mc-button-green"
+        className="mc-button mc-button-green text-xs md:text-sm py-2 px-3 md:px-4 whitespace-nowrap"
       >
         {isRefreshing ? 'Updating...' : 'Refresh My Stats'}
       </button>

@@ -29,7 +29,7 @@ export default function SortControls() {
         <button
           key={option.value}
           onClick={() => handleSortChange(option.value)}
-          className={`mc-button text-xs py-2 px-4 ${
+          className={`mc-button text-xs py-2 px-3 md:px-4 whitespace-nowrap ${
             currentSort === option.value ? 'mc-button-green' : ''
           }`}
         >

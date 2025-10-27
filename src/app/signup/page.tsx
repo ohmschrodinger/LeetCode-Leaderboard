@@ -97,6 +97,21 @@ export default function SignupPage() {
         return
       }
 
+      // Fetch initial stats for the new user
+      try {
+        const statsResponse = await fetch('/api/update-stats', {
+          method: 'POST',
+        })
+        
+        if (!statsResponse.ok) {
+          console.error('Failed to fetch initial stats')
+          // Don't block signup if stats fetch fails
+        }
+      } catch (statsError) {
+        console.error('Error fetching initial stats:', statsError)
+        // Don't block signup if stats fetch fails
+      }
+
       // Redirect to home page
       router.push('/')
     } catch (err) {
