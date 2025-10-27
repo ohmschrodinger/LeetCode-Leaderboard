@@ -41,28 +41,40 @@ A Minecraft-styled LeetCode leaderboard with weekly competitions!
 
 ---
 
-### 🔄 Phase 2: LeetCode Data Integration (NEXT)
-**Status:** Not Started
+### ✅ Phase 2: LeetCode Data Integration (COMPLETE)
+**Status:** Complete - Ready for deployment
 
-**What Will Be Built:**
-- [ ] LeetCode API integration for fetching user stats
-- [ ] Fetch total problems solved (easy/medium/hard)
-- [ ] Fetch contest rating
-- [ ] Weekly stats tracking system
-- [ ] Calculate weekly points (E:1pt, M:2pt, H:3pt)
-- [ ] API routes for data fetching
-- [ ] Automated refresh mechanism
-- [ ] Weekly reset functionality
+**What Was Built:**
+- [x] LeetCode API integration for fetching user stats
+- [x] Fetch total problems solved (easy/medium/hard)
+- [x] Fetch contest rating
+- [x] Weekly stats tracking system with baseline
+- [x] Calculate weekly points (E:1pt, M:2pt, H:3pt)
+- [x] API routes for data fetching and updates
+- [x] Automated hourly refresh via Vercel Cron
+- [x] Weekly reset functionality (Mondays 00:00 UTC)
+- [x] Manual refresh button component
 
-**Technical Details:**
-- Use LeetCode GraphQL API
-- Store baseline stats to calculate weekly progress
-- Implement cron job or scheduled function for updates
-- Handle API rate limiting
+**Files Created:**
+- `src/lib/leetcode.ts` - LeetCode API utilities
+- `src/app/api/update-stats/route.ts` - Individual stats update
+- `src/app/api/cron/update-all-stats/route.ts` - Batch hourly updates
+- `src/components/RefreshStatsButton.tsx` - Manual refresh UI
+- `supabase-phase2-migration.sql` - DB schema update
+- `vercel.json` - Cron job configuration
+
+**Your Tasks:**
+- [ ] Run migration SQL in Supabase
+- [ ] Add `CRON_SECRET` to `.env.local`
+- [ ] Deploy to Vercel
+- [ ] Add `CRON_SECRET` to Vercel env vars
+- [ ] Test stats updates
+
+**Guide:** See `PHASE2_SETUP.md` or `PHASE2_QUICKSTART.md`
 
 ---
 
-### 📊 Phase 3: Leaderboard UI & Ranking System (FUTURE)
+### 📊 Phase 3: Leaderboard UI & Ranking System (NEXT)
 **Status:** Not Started
 
 **What Will Be Built:**
@@ -212,8 +224,15 @@ leetboard/
 │   │       ├── server.ts
 │   │       └── middleware.ts
 │   └── middleware.ts
+├── components/
+│   └── RefreshStatsButton.tsx
+├── supabase-setup.sql
+├── supabase-phase2-migration.sql
+├── vercel.json
 ├── DATABASE_SCHEMA.md
 ├── PHASE1_SETUP.md
+├── PHASE2_SETUP.md
+├── PHASE2_QUICKSTART.md
 ├── PROJECT_ROADMAP.md (this file)
 ├── .env.local.example
 └── package.json
@@ -223,9 +242,9 @@ leetboard/
 
 ## 🎯 Current Status
 
-**Phase 1:** ✅ COMPLETE - Ready for your setup
-**Phase 2:** ⏳ Pending - Waiting for Phase 1 completion
-**Phase 3:** ⏳ Pending
+**Phase 1:** ✅ COMPLETE
+**Phase 2:** ✅ COMPLETE - Ready for deployment
+**Phase 3:** ⏳ Next - Leaderboard UI
 **Phase 4:** ⏳ Pending
 
 ---

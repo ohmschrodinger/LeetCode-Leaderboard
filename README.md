@@ -2,7 +2,7 @@
 
 A competitive LeetCode leaderboard with weekly rankings, built with Next.js and Supabase. Features a retro Minecraft-inspired dark theme!
 
-![Status](https://img.shields.io/badge/Phase%201-Complete-brightgreen)
+![Status](https://img.shields.io/badge/Phase%202-Complete-brightgreen)
 ![Next.js](https://img.shields.io/badge/Next.js-15-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
 ![Supabase](https://img.shields.io/badge/Supabase-Powered-green)
@@ -13,21 +13,25 @@ A competitive LeetCode leaderboard with weekly rankings, built with Next.js and 
 
 - 🔐 **Google OAuth Authentication** - Secure sign-in with Google
 - 🎯 **LeetCode Integration** - Validates and tracks real LeetCode usernames
-- 📊 **Weekly Leaderboard** - Compete with friends on weekly problem-solving
+- 📊 **Automated Stats Tracking** - Hourly updates from LeetCode API
+- 🔄 **Weekly Stats** - Automatic weekly reset every Monday
 - 🏆 **Points System** - Earn points based on difficulty (Easy: 1pt, Medium: 2pt, Hard: 3pt)
-- 👑 **Admin Panel** - Manually manage users (admin-only feature)
+- ⚡ **Manual Refresh** - Users can trigger their own stats update
+- 👑 **Admin Panel** - Manually manage users (admin-only feature) [Coming in Phase 4]
 - 🎨 **Minecraft Theme** - Retro pixel art styling with dark mode
 
 ---
 
 ## 🚀 Quick Start
 
-**For first-time setup, see:** [`QUICK_START.md`](QUICK_START.md)
+**For first-time setup, see:** [`QUICK_START.md`](QUICK_START.md)  
+**For Phase 2 setup, see:** [`PHASE2_QUICKSTART.md`](PHASE2_QUICKSTART.md)
 
 ### Prerequisites
 - Node.js 18+
 - Supabase account
 - Google OAuth credentials
+- Vercel account (for cron jobs)
 
 ### Installation
 
@@ -38,7 +42,7 @@ npm install
 # Copy environment variables
 cp .env.local.example .env.local
 
-# Edit .env.local with your Supabase credentials
+# Edit .env.local with your Supabase credentials + CRON_SECRET
 # Then run the development server
 npm run dev
 ```
@@ -65,17 +69,20 @@ Visit http://localhost:3000
 - [x] Minecraft-styled UI theme
 - [x] User profile management
 
-### 🔄 Phase 2: LeetCode Data Integration (NEXT)
-- [ ] Fetch user statistics from LeetCode
-- [ ] Weekly stats tracking
-- [ ] Automated data refresh
-- [ ] Points calculation system
+### ✅ Phase 2: LeetCode Data Integration (COMPLETE)
+- [x] Fetch user statistics from LeetCode
+- [x] Weekly stats tracking with baseline
+- [x] Automated hourly data refresh via Vercel Cron
+- [x] Points calculation system (E:1, M:2, H:3)
+- [x] Manual refresh button for users
+- [x] Automatic weekly reset (Mondays)
 
-### 📊 Phase 3: Leaderboard UI (FUTURE)
+### 📊 Phase 3: Leaderboard UI (NEXT)
 - [ ] Main leaderboard table
-- [ ] Ranking system
+- [ ] Ranking system with sorting
 - [ ] Real-time updates
 - [ ] User highlighting
+- [ ] Difficulty breakdown display
 
 ### 👑 Phase 4: Admin Panel (FINAL)
 - [ ] Admin dashboard
